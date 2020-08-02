@@ -44,6 +44,7 @@ FCSResult mmm2d_tune(void* rd,
   
   /* Check for charge existence and neutrality */
   mmm2d_check_system_charges(d, num_particles, charges);
+  /* Comment the following two lines when computing without neutrality */
   if (!fcs_float_is_zero(d->total_charge))
     return fcs_result_create(FCS_ERROR_LOGICAL_ERROR, fnc_name, "MMM2D requires a zero net charge.");
   
